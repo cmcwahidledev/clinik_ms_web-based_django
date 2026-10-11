@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Here</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<body>
+    <div class="flex items-center justify-center fixed top-0 left-0 w-full h-full bg-gray-100">
+
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+
+            <!-- Logo -->
+            <div class="text-center mb-8">
+                <div
+                    class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
+                    H
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-800 mt-4">
+                    Welcome Back
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+                    Sign in to your account
+                </p>
+            </div>
+
+            <!-- Login Form -->
+            <form class="space-y-6" onsubmit="handleSubmit(event)">
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        Email Address
+                    </label>
+
+                    <input type="email" value="admin@gmail.com" id="email" placeholder="Enter your email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        Password
+                    </label>
+
+                    <input type="password" value="admin" id="password" placeholder="Enter your password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            if (email.value === '' || password.value === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            if (email.value !== 'admin@gmail.com' || password.value !== 'admin') {
+                alert('Invalid email or password.');
+                return;
+            } else {
+                alert('Login successful!');
+                window.location.href = '{% url "dashboard" %}';
+            }
+
+        };
+
+    </script>
+</body>
+
+</html>

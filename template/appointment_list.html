@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="min-h-screen bg-gray-100 px-6 py-10">
+
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Schedule</h1>
+                <p class="text-gray-500">Appointment Timetable</p>
+            </div>
+
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow">
+                <a href="{% url 'schedule' %}">+ New Appointment</a>
+            </button>
+        </div>
+
+        <!-- Table -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+
+            <table class="w-full text-left">
+
+                <thead class="bg-gray-200 text-gray-700">
+                    <tr>
+                        <th class="py-4 px-6">Full Name</th>
+                        <th class="py-4 px-6">Appointment</th>
+                        <th class="py-4 px-6">Time In</th>
+                        <th class="py-4 px-6">Time Out</th>
+                        <th class="py-4 px-6">Date</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-gray-700">
+
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="py-4 px-6">Mohamed Ali</td>
+                        <td class="py-4 px-6">Dental Checkup</td>
+                        <td class="py-4 px-6">09:00 AM</td>
+                        <td class="py-4 px-6">09:30 AM</td>
+                        <td class="py-4 px-6">2026-07-02</td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="py-4 px-6">Amina Hassan</td>
+                        <td class="py-4 px-6">Eye Consultation</td>
+                        <td class="py-4 px-6">10:00 AM</td>
+                        <td class="py-4 px-6">10:45 AM</td>
+                        <td class="py-4 px-6">2026-07-02</td>
+                    </tr>
+
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="py-4 px-6">Abdi Noor</td>
+                        <td class="py-4 px-6">General Checkup</td>
+                        <td class="py-4 px-6">11:00 AM</td>
+                        <td class="py-4 px-6">11:30 AM</td>
+                        <td class="py-4 px-6">2026-07-02</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
